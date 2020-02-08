@@ -20,3 +20,16 @@
         background: @silver;
     }
 }
+
+.bus(@duration, @delay, @iterations){
+    animation: busMove @duration @delay @iterations alternate backwards;
+
+    @keyframes busMove {
+        from {
+            transform: translateX(0%);
+        }
+        to {
+            transform:  translateX(160%);
+        }
+    }
+}
