@@ -2,18 +2,37 @@
 
   .header-section {
     border-bottom: 2px dashed @navigation-border;
-    
+    #mask {
+
+    }
     .imgDiv {
       margin-bottom: 2rem;
       width: 100%;
       height: 300px;
       background: url("../img/fun-bus-bg.jpg") no-repeat center;
+      overflow:visible;
       
       img {
+        display: block;
         position: relative;
-        margin-top: 6rem;
-        .bus(5s, 2s, infinite);
+        padding-top: 6rem;
+
+        @media only screen and (max-width: 413px) {
+          margin: 0 auto;
+        }
+        @media only screen and (min-width: 414px) {
+          .bus(10s, 2s, infinite, 25%)
+        }
+        @media only screen and (min-width: 600px) {
+          
+          .bus(10s, 2s, infinite, 80%);
+        }
+        @media only screen and (min-width: 710px) {
+          .bus(10s, 2s, infinite, 160%);
+        }
       }
+
+      
 
     }
     

@@ -21,15 +21,22 @@
     }
 }
 
-.bus(@duration, @delay, @iterations){
-    animation: busMove @duration @delay @iterations alternate backwards;
+.bus(@duration, @delay, @iterations, @stop){
+    animation: busMove @duration @delay @iterations;
 
     @keyframes busMove {
-        from {
+        /* from {
             transform: translateX(0%);
         }
         to {
             transform:  translateX(160%);
-        }
+        } */
+
+        0%   { transform: translateX(0%); }
+        25% { transform: translateX(@stop) scaleX(1); }
+        50% { transform: translateX(@stop) scaleX(-1); }
+        75% { transform: translateX(0%) scaleX(-1); }  
+        
+        
     }
 }
